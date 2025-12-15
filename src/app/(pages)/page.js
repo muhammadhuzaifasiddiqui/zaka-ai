@@ -1,11 +1,16 @@
-import React from 'react'
-import Navbar from '../components/layout/Navbar'
+import React from "react";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 import Image from "next/image";
 
 const page = () => {
   return (
-    <Navbar />
-  )
-}
+    <>
+      {/* <Navbar /> */}
 
-export default page
+      <Footer />
+    </>
+  );
+};
+
+export default page;
