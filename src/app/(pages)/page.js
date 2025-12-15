@@ -1,8 +1,9 @@
 import React from 'react'
+import Navbar from '../components/layout/Navbar'
 
 const page = () => {
   return (
-    <div>Zaka AI</div>
+    <Navbar />
   )
 }
 
