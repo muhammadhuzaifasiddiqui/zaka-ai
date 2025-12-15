@@ -6,7 +6,7 @@ import Image from "next/image";
 const page = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
 
       <Footer />
     </>
