@@ -61,7 +61,6 @@ a {
 
 /* newsletter */
 .bg-newsletter {
-  position: relative;
   padding: 50px;
   width: 100%;
   background: linear-gradient(
@@ -84,6 +83,42 @@ a {
   background-color: #ff8c1a;
   color: #050402;
 }
+
+/* social-media-section */
+
+.social-media-section .social-icons {
+  width: 40px;
+  height: 40px;
+  background-color: #ff8c1a;
+  border-radius: 50%;
+}
+
+.social-media-cards {
+  width: 100%;
+  border: solid 1px #ff8c1a;
+  border-radius: 20px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(7px);
+}
+
+.social-media-cards .card {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 25px 20px;
+}
+
+.social-media-cards .card .img {
+  object-fit: cover;
+  border-radius: 25px;
+  width: 350px;
+  height: 345px;
+}
+
 /* footer */
 .footer .footer-top {
   border-top: 1px solid #404040;
