@@ -7,7 +7,7 @@ import Navbar from "./Navbar";
 const Footer = () => {
   return (
     // FOOTER SECTION
-    <div className="footer mt-50">
+    <div className="footer mt-100">
       <div className="container mx-auto">
         <div className="footer-top">
           <div className="flex flex-wrap">
