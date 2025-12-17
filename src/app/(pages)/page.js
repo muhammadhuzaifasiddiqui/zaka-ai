@@ -71,7 +71,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
     // PARENT DIV: Added transition-all duration-500 for smooth background color change
     <div
       className={`cursor-pointer overflow-hidden rounded-[12px] transition-all duration-500 ease-in-out
-      ${isOpen ? "bg-[]" : "bg-white"}
+      ${isOpen ? "bg-[#6C8E69]" : "bg-white"}
       `}
     >
       <button
