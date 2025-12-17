@@ -15,30 +15,24 @@ const faqData = [
     id: 1,
     question: "Hire From ZAKA",
     answer:
-      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+      "ZAKA Careers connects you with a pipeline of certified, job-ready AI and Data professionals trained through intensive, hands-on programs and real-world projects. Our graduates combine strong technical skills with practical problem-solving abilities, ready to contribute to your team from day one. We specialize in roles across Machine Learning, Data Science, Data Engineering, and Data Analytics, bridging the gap between top talent and hiring needs in the MENA region. ",
   },
   {
     id: 2,
     question: "Corporate Training",
     answer:
-      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+      "Unlock your team's potential with customized AI training from ZAKA. Our expert-led programs, from fundamentals to advanced techniques, empower your workforce to tackle real-world challenges and drive business success. Equip your team with the latest AI skills to stay ahead of the curve and create lasting impact.",
   },
   {
     id: 3,
     question: "AI Consultancy",
     answer:
-      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
-  },
-  {
-    id: 4,
-    question: "Q: How soon should I start?",
-    answer:
-      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+      "MadeBy is the AI innovation and development arm of ZAKA, focused on transforming ambitious ideas into tangible AI solutions. Our expert consulting team helps businesses design and implement AI strategies that drive innovation, optimize operations, and deliver long-term value. Explore our portfolio to see how we’re leveraging ZAKA’s expertise and community to create impactful, cutting-edge AI solutions.",
   },
 ];
 
+// Reusable Accordion Item component
 const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
-  // Use a dynamic height for the answer to allow for responsive content length
   const contentRef = useRef(null);
 
   // Calculate max-height dynamically
@@ -48,18 +42,39 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
       : 0
     : 0;
 
-  // Lucide icon (ChevronDown) as inline SVG for compatibility
-  const ChevronDown = ({ className }) => (
+  // Plus Icon (for collapsed state)
+  const PlusIcon = ({ className }) => (
     <svg
-      className={className}
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
-        d="M6 9L12 15L18 9"
+        d="M7 1V13M1 7H13"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  // Minus Icon (for expanded state)
+  const MinusIcon = ({ className }) => (
+    <svg
+      width="14"
+      height="2" // Height adjusted since it's just a line
+      viewBox="0 0 14 2"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M1 1H13"
+        stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -68,48 +83,63 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
   );
 
   return (
-    // PARENT DIV: Added transition-all duration-500 for smooth background color change
     <div
-      className={`cursor-pointer overflow-hidden rounded-[12px] transition-all duration-500 ease-in-out
-      ${isOpen ? "bg-[#6C8E69]" : "bg-white"}
+      onClick={onToggle} // Clicking anywhere on the card toggles it
+      className={`cursor-pointer overflow-hidden rounded-[16px] transition-all duration-500 ease-in-out border border-transparent
+      ${
+        isOpen
+          ? "bg-[#FF9933]" // Active Orange Color
+          : "bg-[#0D0D0D]" // Inactive Dark Color
+      } 
       `}
     >
-      <button
-        onClick={onToggle}
-        // Corrected py-[20] to py-[20px] for valid Tailwind class
-        className={`cursor-pointer flex w-full justify-between items-center! leading-22 text-left faq-head
-        `}
-        aria-expanded={isOpen}
-      >
+      {/* Header Section */}
+      <div className="flex w-full justify-between items-center p-6 pb-4">
         <p
-          className={`cursor-pointer font-the-bold leading-22 fs-18
-            ${isOpen ? "text-white" : "text-black"}
+          className={`font-bold text-lg leading-tight transition-colors duration-300
+          ${isOpen ? "text-[#1A1A1A]" : "text-white"}
           `}
         >
           {question}
         </p>
-        <ChevronDown
-          className={`
-            cursor-pointer leading-22 stroke-black transition-all duration-500
-            ${isOpen ? "rotate-180 stroke-white" : "rotate-0"}
-          `}
-        />
-      </button>
 
-      {/* Content area: Added transition-all duration-500 for smooth max-height/collapse */}
-      <div
-        style={{ maxHeight: `${contentHeight}px` }}
-        className="cursor-pointer  overflow-hidden transition-all duration-500 ease-in-out "
-      >
-        <p
-          ref={contentRef}
-          className={`
-            cursor-pointer text-white leading-20 faq-bottom
-            ${isOpen ? "opacity-100 pt-0" : "opacity-0 pt-0"}
+        {/* Icon Container */}
+        <div
+          className={`flex items-center justify-center w-8 h-8 rounded-lg transition-colors duration-300
+            ${
+              isOpen
+                ? "bg-[#FFD4A3] text-black" // Light orange bg for minus icon
+                : "bg-[#1F1F1F] text-white" // Dark gray bg for plus icon
+            }
           `}
         >
-          {answer}
-        </p>
+          {isOpen ? <MinusIcon /> : <PlusIcon />}
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div
+        style={{ maxHeight: `${contentHeight}px` }}
+        className="overflow-hidden transition-all duration-500 ease-in-out"
+      >
+        <div ref={contentRef} className="px-6 pb-6">
+          <p
+            className={`text-base leading-relaxed transition-colors duration-300
+            ${isOpen ? "text-[#1A1A1A]" : "text-gray-400"}
+            `}
+          >
+            {answer}
+          </p>
+
+          {/* "Click on it for more details" text - visible only when open */}
+          <p
+            className={`mt-4 italic text-sm transition-opacity duration-500 delay-100
+            ${isOpen ? "opacity-100 text-[#1A1A1A]" : "opacity-0"}
+            `}
+          >
+            Click on it for more details
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -139,7 +169,7 @@ const page = () => {
                   Expertise
                 </h2>
               </div>
-              <div className="flex flex-col xl:gap-5 lg:gap-4 gap-3">
+              <div className="flex flex-col gap-4">
                 {faqData.map((item) => (
                   <AccordionItem
                     key={item.id}
