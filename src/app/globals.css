@@ -27,18 +27,18 @@ a {
   text-decoration: inherit;
 }
 
-.navigation-btn{
+.navigation-btn {
   border-radius: 50px;
   padding: 10px 36px;
   border: solid 1px #ff8c1a;
 }
 
-.contact-btn{
-    border: solid 1px white;
-    background-color: #000000;
-    color: white;
-    padding: 12px 60px;
-    border-radius: 20px;
+.contact-btn {
+  border: solid 1px white;
+  background-color: #000000;
+  color: white;
+  padding: 12px 60px;
+  border-radius: 20px;
 }
 
 .btn-newsletter {
@@ -78,6 +78,58 @@ a {
 
 .pb-15 {
   padding-bottom: 15px;
+}
+
+/* Discover section */
+.tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ff8c1a;
+  border-radius: 24px;
+  margin: 8px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(7px);
+}
+
+/* Blog Section */
+.blog-section .image-wrapper {
+  height: 235px;
+  border-radius: 24px;
+  margin-bottom: 20px;
+}
+
+.swiper-slide {
+  background: linear-gradient(0deg, #00000099 0%, #00000099 100%),
+    linear-gradient(#ffffff26, #ffffff26);
+  backdrop-filter: blur(7px);
+  border-radius: 24px;
+  margin-right: 20px;
+  padding: 15px;
+}
+
+.blog-title {
+  font-size: 19px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.blog-slider-wrapper {
+  padding: 100px 40px;
+  width: 100%;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(7px);
+  border: 1px solid #ff8c1a;
+  border-radius: 20px;
 }
 
 /* newsletter */

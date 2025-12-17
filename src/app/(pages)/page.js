@@ -4,15 +4,65 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const page = () => {
+  const swiperRef = useRef(null);
+
   return (
     <>
       {/* <Navbar /> */}
+
+      {/* Discover Section */}
+      <div className="blog-section mt-100">
+        <div className="container mx-auto">
+          <div className="text-center mb-7.5">
+            <h2>Discover More</h2>
+          </div>
+          <div className="flex flex-wrap justify-center">
+            <Link href="#" className="tag">
+              LegalTech
+            </Link>
+            <Link href="#" className="tag">
+              Data Science
+            </Link>
+            <Link href="#" className="tag">
+              AI Tools
+            </Link>
+            <Link href="#" className="tag">
+              Workforce Training
+            </Link>
+            <Link href="#" className="tag">
+              Data Analytics
+            </Link>
+            <Link href="#" className="tag">
+              AI in Marketing
+            </Link>
+            <Link href="#" className="tag">
+              Solutions development
+            </Link>
+            <Link href="#" className="tag">
+              AI in Healthcare
+            </Link>
+            <Link href="#" className="tag">
+              Machine Learning
+            </Link>
+            <Link href="#" className="tag">
+              AI for Schools
+            </Link>
+            <Link href="#" className="tag">
+              Hiring Talents
+            </Link>
+            <Link href="#" className="tag">
+              Data Engineering
+            </Link>
+          </div>
+        </div>
+      </div>
 
       {/* Blog Section */}
       <div className="blog-section mt-100">
@@ -48,7 +98,7 @@ const page = () => {
               </Link>
             </div>
           </div>
-          <div className="w-full overflow-hidden">
+          <div className="flex blog-slider-wrapper">
             <Swiper
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
@@ -85,7 +135,136 @@ const page = () => {
                   spaceBetween: 12,
                 },
               }}
-            ></Swiper>
+            >
+              <SwiperSlide>
+                <Link href="#" className="cursor-pointer blog-card">
+                  <div className="image-wrapper">
+                    <Image
+                      src={
+                        "https://zaka.ai/wp-content/uploads/2025/12/Blog-Cover-Photos-Website.png"
+                      }
+                      width={375}
+                      height={246}
+                      alt={"blog-image"}
+                      unoptimized={true}
+                      className="rounded-[24px]"
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <p className="font-medium">10-12-2025</p>
+                    <div className="blog-title">
+                      New Website Launch: Your Gateway to AI Education &
+                      Solutions
+                    </div>
+                    <p className="">
+                      Nabra, developed by ZAKA graduates, is an AI platform that
+                      turns children’s speech recordings into clear, actionable
+                      insights for therapists, all within a safe and playful
+                      environment. Its success at the AI for Good Sandbox finals
+                      highlights the impact of human-centered AI in real-world
+                      healthcare.
+                    </p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Link href="#" className="cursor-pointer blog-card">
+                  <div className="image-wrapper">
+                    <Image
+                      src={
+                        "https://zaka.ai/wp-content/uploads/2025/12/Blog-Cover-Photos-Website.png"
+                      }
+                      width={375}
+                      height={246}
+                      alt={"blog-image"}
+                      unoptimized={true}
+                      className="rounded-[24px]"
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <p className="font-medium">10-12-2025</p>
+                    <div className="blog-title">
+                      New Website Launch: Your Gateway to AI Education &
+                      Solutions
+                    </div>
+                    <p className="">
+                      Nabra, developed by ZAKA graduates, is an AI platform that
+                      turns children’s speech recordings into clear, actionable
+                      insights for therapists, all within a safe and playful
+                      environment. Its success at the AI for Good Sandbox finals
+                      highlights the impact of human-centered AI in real-world
+                      healthcare.
+                    </p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Link href="#" className="cursor-pointer blog-card">
+                  <div className="image-wrapper">
+                    <Image
+                      src={
+                        "https://zaka.ai/wp-content/uploads/2025/12/Blog-Cover-Photos-Website.png"
+                      }
+                      width={375}
+                      height={246}
+                      alt={"blog-image"}
+                      unoptimized={true}
+                      className="rounded-[24px]"
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <p className="font-medium">10-12-2025</p>
+                    <div className="blog-title">
+                      New Website Launch: Your Gateway to AI Education &
+                      Solutions
+                    </div>
+                    <p className="">
+                      Nabra, developed by ZAKA graduates, is an AI platform that
+                      turns children’s speech recordings into clear, actionable
+                      insights for therapists, all within a safe and playful
+                      environment. Its success at the AI for Good Sandbox finals
+                      highlights the impact of human-centered AI in real-world
+                      healthcare.
+                    </p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Link href="#" className="cursor-pointer blog-card">
+                  <div className="image-wrapper">
+                    <Image
+                      src={
+                        "https://zaka.ai/wp-content/uploads/2025/12/Blog-Cover-Photos-Website.png"
+                      }
+                      width={375}
+                      height={246}
+                      alt={"blog-image"}
+                      unoptimized={true}
+                      className="rounded-[24px]"
+                    />
+                  </div>
+
+                  <div className="p-5">
+                    <p className="font-medium">10-12-2025</p>
+                    <div className="blog-title">
+                      New Website Launch: Your Gateway to AI Education &
+                      Solutions
+                    </div>
+                    <p className="">
+                      Nabra, developed by ZAKA graduates, is an AI platform that
+                      turns children’s speech recordings into clear, actionable
+                      insights for therapists, all within a safe and playful
+                      environment. Its success at the AI for Good Sandbox finals
+                      highlights the impact of human-centered AI in real-world
+                      healthcare.
+                    </p>
+                  </div>
+                </Link>
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>
