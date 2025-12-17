@@ -81,11 +81,17 @@ a {
 }
 
 /* Course Section */
-.course-card .image-wrapper{
+.course-Image{
   position: relative;
   border-radius: 20px;
   width: 100%;
   height: 200px;
+}
+
+.course-section h5{
+  font-size: 17px;
+  font-weight: 700;
+  color: #FF8C1A;
 }
 
 .course-card {

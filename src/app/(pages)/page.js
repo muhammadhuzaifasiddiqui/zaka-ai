@@ -29,24 +29,86 @@ const page = () => {
               turn your potential into proven expertise.
             </p>
           </div>
-          <div className="grid grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="course-card">
-              <div className="image-wrapper">
+              <div className="course-Image">
                 <Image
-                  src={
-                    "https://zaka.ai/wp-content/uploads/2025/11/ircl-16.png"
-                  }
+                  src={"https://zaka.ai/wp-content/uploads/2025/11/ircl-16.png"}
                   alt="course"
-                  height={24}
-                  width={24}
+                  height={200}
+                  width={100}
                   unoptimized={true}
-                  className="rounded-[20px]"
+                  className="w-full! h-full! rounded-[20px]"
                 />
               </div>
-              <div>
-                <span>20 weeks</span>
-                <h5>Machine Learning Specialization</h5>
-                <p>Join our intensive program to become a valuable asset to any ML team.</p>
+              <div className="flex flex-col p-[15px]">
+                <span className="text-[12px]">20 weeks</span>
+                <h5 className="my-2">Machine Learning Specialization</h5>
+                <p className="mb-4">
+                  Join our intensive program to become a valuable asset to any
+                  ML team.
+                </p>
+              </div>
+            </div>
+            <div className="course-card">
+              <div className="course-Image">
+                <Image
+                  src={"https://zaka.ai/wp-content/uploads/2025/11/ircl-16.png"}
+                  alt="course"
+                  height={200}
+                  width={100}
+                  unoptimized={true}
+                  className="w-full! h-full! rounded-[20px]"
+                />
+              </div>
+              <div className="flex flex-col p-[15px]">
+                <span className="text-[12px]">20 weeks</span>
+                <h5 className="my-2">Machine Learning Specialization</h5>
+                <p className="mb-4">
+                  Join our intensive program to become a valuable asset to any
+                  ML team.
+                </p>
+              </div>
+            </div>
+            <div className="course-card">
+              <div className="course-Image">
+                <Image
+                  src={"https://zaka.ai/wp-content/uploads/2025/11/ircl-16.png"}
+                  alt="course"
+                  height={200}
+                  width={100}
+                  unoptimized={true}
+                  className="w-full! h-full! rounded-[20px]"
+                />
+              </div>
+              <div className="flex flex-col p-[15px]">
+                <span className="text-[12px]">20 weeks</span>
+                <h5 className="my-2">Machine Learning Specialization</h5>
+                <p className="mb-4">
+                  Join our intensive program to become a valuable asset to any
+                  ML team.
+                </p>
+              </div>
+            </div>
+            <div className="course-card">
+              <div className="course-Image">
+                <Image
+                  src={"https://zaka.ai/wp-content/uploads/2025/11/ircl-16.png"}
+                  alt="course"
+                  height={200}
+                  width={100}
+                  unoptimized={true}
+                  className="w-full! h-full! rounded-[20px]"
+                />
+              </div>
+              <div className="flex flex-col p-[15px]">
+                <span className="text-[12px]">20 weeks</span>
+                <h5 className="my-2">Machine Learning Specialization</h5>
+                <p className="mb-4">
+                  Join our intensive program to become a valuable asset to any
+                  ML team.
+                </p>
               </div>
             </div>
           </div>
