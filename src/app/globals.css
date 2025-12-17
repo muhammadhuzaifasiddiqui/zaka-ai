@@ -27,6 +27,19 @@ a {
   text-decoration: inherit;
 }
 
+.contact-btn{
+    border: solid 1px white;
+    background-color: var(--neutral-black);
+    color: var(--white);
+}
+
+.btn-newsletter {
+  border-radius: 20px;
+  padding: 12px 24px 12px 24px;
+  border: solid 1px #ff8c1a;
+  background-color: #ff8c1a;
+  color: #050402;
+}
 .container {
   max-width: 1290px;
 }
@@ -74,16 +87,6 @@ a {
   border-radius: 20px;
 }
 
-.btn-newsletter {
-  min-width: 186px;
-  min-height: 40px;
-  border-radius: 20px;
-  padding: 12px 24px 12px 24px;
-  border: solid 1px #ff8c1a;
-  background-color: #ff8c1a;
-  color: #050402;
-}
-
 /* social-media-section */
 
 .social-media-section .social-icons {
@@ -117,6 +120,21 @@ a {
   border-radius: 25px;
   width: 350px;
   height: 345px;
+}
+
+/* Contact */
+
+.contact-box {
+  padding: 50px 40px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(7px);
+  border: 1px solid #ff8c1a;
+  border-radius: 20px;
 }
 
 /* footer */
