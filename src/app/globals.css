@@ -27,10 +27,18 @@ a {
   text-decoration: inherit;
 }
 
+.navigation-btn{
+  border-radius: 50px;
+  padding: 10px 36px;
+  border: solid 1px #ff8c1a;
+}
+
 .contact-btn{
     border: solid 1px white;
-    background-color: var(--neutral-black);
-    color: var(--white);
+    background-color: #000000;
+    color: white;
+    padding: 12px 60px;
+    border-radius: 20px;
 }
 
 .btn-newsletter {

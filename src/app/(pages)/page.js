@@ -1,13 +1,94 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const page = () => {
   return (
     <>
       {/* <Navbar /> */}
+
+      {/* Blog Section */}
+      <div className="blog-section mt-100">
+        <div className="container mx-auto">
+          <div className="flex items-center">
+            <div className="flex w-[50%]">
+              <h2>Real Stories &amp; Breakthroughs </h2>
+            </div>
+            <div className="flex w-[50%] justify-center gap-2.5 blog-navigation">
+              <Link href="#" className="navigation-btn">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/icons/left-arrow-normal.svg"
+                  }
+                  alt="prev"
+                  height={24}
+                  width={24}
+                  unoptimized={true}
+                  className=""
+                />
+              </Link>
+              <Link href="#" className="navigation-btn">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/icons/right-arrow-normal.svg"
+                  }
+                  alt="prev"
+                  height={24}
+                  width={24}
+                  unoptimized={true}
+                  className=""
+                />
+              </Link>
+            </div>
+          </div>
+          <div className="w-full overflow-hidden">
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              spaceBetween={12}
+              slidesPerView={4}
+              breakpoints={{
+                1399.97: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+                1199.97: {
+                  slidesPerView: 3,
+                  spaceBetween: 16,
+                },
+                1023.97: {
+                  slidesPerView: 3,
+                  spaceBetween: 16,
+                },
+                767.97: {
+                  slidesPerView: 2,
+                  spaceBetween: 12,
+                },
+                575.97: {
+                  slidesPerView: 1,
+                  spaceBetween: 12,
+                },
+                399.97: {
+                  slidesPerView: 1,
+                  spaceBetween: 12,
+                },
+                319.97: {
+                  slidesPerView: 1,
+                  spaceBetween: 12,
+                },
+              }}
+            ></Swiper>
+          </div>
+        </div>
+      </div>
 
       {/* NewsLetter Section */}
       <div className="newsletter-section mt-100">
@@ -195,11 +276,11 @@ const page = () => {
         <div className="container mx-auto rounded-[20px]">
           <div className="contact-box flex flex-col w-full">
             <form>
-              <h2>Do you have any questions?</h2>
+              <h2 className="mb-10">Do you have any questions?</h2>
 
               <div className="flex flex-col">
                 <div className="flex flex-row gap-6">
-                  <div className="flex flex-col">
+                  <div className="flex flex-col w-full">
                     <label htmlFor="username" className="mb-2.5">
                       Full name
                     </label>
@@ -208,11 +289,11 @@ const page = () => {
                       type="text"
                       name="username"
                       placeholder="John Smith"
-                    className="w-full mb-9 placeholder-[#E5E5E5] bg-[#404040] p-[20px] rounded-[8px] focus:outline-none"
+                      className="w-full mb-9 placeholder-[#E5E5E5] bg-[#404040] p-[20px] rounded-[8px] focus:outline-none"
                     />
                   </div>
 
-                  <div className="flex flex-col">
+                  <div className="flex flex-col w-full">
                     <label htmlFor="email" className="mb-2.5">
                       Your email
                     </label>
@@ -222,7 +303,7 @@ const page = () => {
                       name="email"
                       autoComplete="email"
                       placeholder="Enter your email address"
-                    className="w-full mb-9 placeholder-[#E5E5E5] bg-[#404040] p-[20px] rounded-[8px] focus:outline-none"
+                      className="w-full mb-9 placeholder-[#E5E5E5] bg-[#404040] p-[20px] rounded-[8px] focus:outline-none"
                     />
                   </div>
                 </div>
@@ -252,16 +333,31 @@ const page = () => {
                     className="w-full mb-9 placeholder-[#E5E5E5] bg-[#404040] p-[20px] rounded-[8px] focus:outline-none"
                   ></textarea>
                 </div>
-              </div>
-              <div className="xl:mt-6 lg:mt-5 mt-4 flex">
-                <div className="flex group">
-                  <Link
-                    href="#"
-                    className="contact-btn"
-                  >
-                    SUBMIT
+                <div>
+                  <Link href="#" className="contact-btn">
+                    Send
                   </Link>
                 </div>
+                <p className="text-[10px] text-[#888] leading-[1.3] mt-12">
+                  <br />
+                  This site is protected by reCAPTCHA and the Google
+                  <br />
+                  <Link
+                    href="https://policies.google.com/privacy"
+                    className="text-[#888] underline underline-offset-2 decoration-1"
+                  >
+                    Privacy Policy
+                  </Link>
+                  {" and "}
+                  <br />
+                  <Link
+                    href="https://policies.google.com/terms"
+                    className="text-[#888] underline underline-offset-2 decoration-1"
+                  >
+                    Terms of Service
+                  </Link>
+                  apply.
+                </p>
               </div>
             </form>
           </div>
