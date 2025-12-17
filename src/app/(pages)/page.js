@@ -4,14 +4,125 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+const faqData = [
+  {
+    id: 1,
+    question: "Hire From ZAKA",
+    answer:
+      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+  },
+  {
+    id: 2,
+    question: "Corporate Training",
+    answer:
+      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+  },
+  {
+    id: 3,
+    question: "AI Consultancy",
+    answer:
+      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+  },
+  {
+    id: 4,
+    question: "Q: How soon should I start?",
+    answer:
+      "Our A+ talent goes through a no-joke vetting process. Only the top 1% make it through. Once we’ve got three rockstars, we’ll line up interviews so you can pick your fave—easy peasy.",
+  },
+];
+
+const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
+  // Use a dynamic height for the answer to allow for responsive content length
+  const contentRef = useRef(null);
+
+  // Calculate max-height dynamically
+  const contentHeight = isOpen
+    ? contentRef.current
+      ? contentRef.current.scrollHeight
+      : 0
+    : 0;
+
+  // Lucide icon (ChevronDown) as inline SVG for compatibility
+  const ChevronDown = ({ className }) => (
+    <svg
+      className={className}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6 9L12 15L18 9"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  return (
+    // PARENT DIV: Added transition-all duration-500 for smooth background color change
+    <div
+      className={`cursor-pointer overflow-hidden rounded-[12px] transition-all duration-500 ease-in-out
+      ${isOpen ? "bg-[]" : "bg-white"}
+      `}
+    >
+      <button
+        onClick={onToggle}
+        // Corrected py-[20] to py-[20px] for valid Tailwind class
+        className={`cursor-pointer flex w-full justify-between items-center! leading-22 text-left faq-head
+        `}
+        aria-expanded={isOpen}
+      >
+        <p
+          className={`cursor-pointer font-the-bold leading-22 fs-18
+            ${isOpen ? "text-white" : "text-black"}
+          `}
+        >
+          {question}
+        </p>
+        <ChevronDown
+          className={`
+            cursor-pointer leading-22 stroke-black transition-all duration-500
+            ${isOpen ? "rotate-180 stroke-white" : "rotate-0"}
+          `}
+        />
+      </button>
+
+      {/* Content area: Added transition-all duration-500 for smooth max-height/collapse */}
+      <div
+        style={{ maxHeight: `${contentHeight}px` }}
+        className="cursor-pointer  overflow-hidden transition-all duration-500 ease-in-out "
+      >
+        <p
+          ref={contentRef}
+          className={`
+            cursor-pointer text-white leading-20 faq-bottom
+            ${isOpen ? "opacity-100 pt-0" : "opacity-0 pt-0"}
+          `}
+        >
+          {answer}
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const page = () => {
   const swiperRef = useRef(null);
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleToggle = (id) => {
+    setActiveIndex(id === activeIndex ? null : id);
+  };
 
   return (
     <>
@@ -28,8 +139,19 @@ const page = () => {
                   Expertise
                 </h2>
               </div>
-              
+              <div className="flex flex-col xl:gap-5 lg:gap-4 gap-3">
+                {faqData.map((item) => (
+                  <AccordionItem
+                    key={item.id}
+                    question={item.question}
+                    answer={item.answer}
+                    isOpen={item.id === activeIndex}
+                    onToggle={() => handleToggle(item.id)}
+                  />
+                ))}
+              </div>
             </div>
+
             <div className="flex justify-center w-[40%]">
               <div className="image-wrapper">
                 <Image
