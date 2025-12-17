@@ -17,6 +17,8 @@ const page = () => {
     <>
       {/* <Navbar /> */}
 
+{/* Training Section */}
+
       {/* Course Section */}
       <div className="course-section mt-100">
         <div className="container mx-auto">
