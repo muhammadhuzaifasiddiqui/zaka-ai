@@ -80,18 +80,51 @@ a {
   padding-bottom: 15px;
 }
 
+/* Training Section */
+.training-card {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(7px);
+  border-radius: 20px;
+  padding: 40px 30px;
+}
+
+.training-section h5 {
+  font-size: 35px;
+  margin-bottom: 15px;
+  color: #ff8c1a;
+  font-weight: 600;
+}
+
+.training-section .image-wrapper{
+  max-height: 500px;
+} 
+
+.training-section ul li {
+  padding: 15px 0px;
+  border-bottom: 1px solid #404040;
+}
+
+.training-section ul li:last-child {
+  border-bottom: none;
+}
+
 /* Course Section */
-.course-Image{
+.course-Image {
   position: relative;
   border-radius: 20px;
   width: 100%;
   height: 200px;
 }
 
-.course-section h5{
+.course-section h5 {
   font-size: 17px;
   font-weight: 700;
-  color: #FF8C1A;
+  color: #ff8c1a;
 }
 
 .course-card {

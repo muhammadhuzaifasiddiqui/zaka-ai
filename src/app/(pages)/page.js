@@ -17,7 +17,135 @@ const page = () => {
     <>
       {/* <Navbar /> */}
 
-{/* Training Section */}
+      {/* Faq Section */}
+      <div className="training-section mt-100">
+        <div className="container mx-auto">
+          <div className="flex items-center">
+            <div className="w-[60%]">
+              <div className="flex flex-col">
+                <h2 className="mb-7.5">
+                  Drive AI Success with the Right Talent, Training, and Trusted
+                  Expertise
+                </h2>
+              </div>
+              
+            </div>
+            <div className="flex justify-center w-[40%]">
+              <div className="image-wrapper">
+                <Image
+                  src={"https://zaka.ai/wp-content/uploads/2025/06/Layer-2.png"}
+                  alt="course"
+                  height={200}
+                  width={100}
+                  unoptimized={true}
+                  className="w-full! h-full!"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Training Section */}
+      <div className="training-section mt-100">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="training-card">
+              <h5>Foundation</h5>
+              <p className="mb-[15px]">
+                Begin your AI journey with ZAKA’s beginner-friendly Fundamentals
+                courses, no experience needed. Build a strong foundation in core
+                AI concepts and tools to kickstart your future in tech.
+              </p>
+              <ul>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">WhatsApp Courses</Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">Email Courses</Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">
+                      Self-Paced Courses
+                    </Link>
+                  </strong>
+                </li>
+              </ul>
+            </div>
+            <div className="training-card">
+              <h5>Practitioner</h5>
+              <p className="mb-[15px]">
+                Level up with ZAKA’s Intermediate Training. Gain hands-on skills
+                and expert guidance to build AI models or use AI platforms
+                effectively.
+              </p>
+              <ul>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">AI Bootcamps</Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">
+                      Code-Along Workshops
+                    </Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">
+                      AI Personal Toolkit
+                    </Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">
+                      AI for Product Managers
+                    </Link>
+                  </strong>
+                </li>
+              </ul>
+            </div>
+            <div className="training-card">
+              <h5>Mastery</h5>
+              <p className="mb-[15px]">
+                Advance with ZAKA’s Career Tracks . Dive into our immersive
+                programs with projects and mentorship that build job-ready
+                skills
+              </p>
+              <ul>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">Machine Learning</Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">Data Science</Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">Data Analytics</Link>
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    <Link href="/foundations/#whatsapp">Data Engineering</Link>
+                  </strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Course Section */}
       <div className="course-section mt-100">
