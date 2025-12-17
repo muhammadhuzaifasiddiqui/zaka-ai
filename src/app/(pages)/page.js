@@ -109,7 +109,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
             ${
               isOpen
                 ? "bg-[#FFD4A3] text-black" // Light orange bg for minus icon
-                : "bg-[#1F1F1F] text-white" // Dark gray bg for plus icon
+                : "bg-transparent text-white" // Dark gray bg for plus icon
             }
           `}
         >
