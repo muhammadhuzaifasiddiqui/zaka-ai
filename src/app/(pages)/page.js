@@ -17,49 +17,124 @@ const page = () => {
     <>
       {/* <Navbar /> */}
 
+      {/* Course Section */}
+      <div className="course-section mt-100">
+        <div className="container mx-auto">
+          <div className="mb-12.5">
+            <h2 className="mb-6.5">
+              Get Certified in AI Through Expert- Led, Real-World Training
+            </h2>
+            <p className="mb-4">
+              Unlock career opportunities with hands-on AI training designed to
+              turn your potential into proven expertise.
+            </p>
+          </div>
+          <div className="grid grid-cols-4 gap-6">
+            <div className="course-card">
+              <div className="image-wrapper">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/ircl-16.png"
+                  }
+                  alt="course"
+                  height={24}
+                  width={24}
+                  unoptimized={true}
+                  className="rounded-[20px]"
+                />
+              </div>
+              <div>
+                <span>20 weeks</span>
+                <h5>Machine Learning Specialization</h5>
+                <p>Join our intensive program to become a valuable asset to any ML team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Award Section */}
+      <div className="blog-section mt-100">
+        <div className="container mx-auto">
+          <div className="flex justify-between items-center">
+            <div className="w-[50%]">
+              <div className="flex flex-col">
+                <h2 className="mb-4">Ranked the Best AI/ML Bootcamp of 2025</h2>
+                <p className="mb-4">
+                  ZAKA has officially been recognized by Course Report as one of
+                  the Best AI / ML Bootcamp of 2025. This award highlights our
+                  commitment to delivering world-class, hands-on AI education
+                  that truly prepares learners for real-world impact.
+                </p>
+                <p>
+                  Join thousands of professionals who’ve chosen ZAKA to upskill,
+                  transition careers, and lead with confidence in AI.
+                </p>
+              </div>
+            </div>
+            <div className="w-[40%]">
+              <Image
+                src={
+                  "https://zaka.ai/wp-content/uploads/2025/07/4.985-Rated-by-candidates.-2.png"
+                }
+                alt="Facebook"
+                height={40}
+                width={40}
+                unoptimized={true}
+                className=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Discover Section */}
       <div className="blog-section mt-100">
         <div className="container mx-auto">
           <div className="text-center mb-7.5">
             <h2>Discover More</h2>
           </div>
-          <div className="flex flex-wrap justify-center">
-            <Link href="#" className="tag">
-              LegalTech
-            </Link>
-            <Link href="#" className="tag">
-              Data Science
-            </Link>
-            <Link href="#" className="tag">
-              AI Tools
-            </Link>
-            <Link href="#" className="tag">
-              Workforce Training
-            </Link>
-            <Link href="#" className="tag">
-              Data Analytics
-            </Link>
-            <Link href="#" className="tag">
-              AI in Marketing
-            </Link>
-            <Link href="#" className="tag">
-              Solutions development
-            </Link>
-            <Link href="#" className="tag">
-              AI in Healthcare
-            </Link>
-            <Link href="#" className="tag">
-              Machine Learning
-            </Link>
-            <Link href="#" className="tag">
-              AI for Schools
-            </Link>
-            <Link href="#" className="tag">
-              Hiring Talents
-            </Link>
-            <Link href="#" className="tag">
-              Data Engineering
-            </Link>
+          <div className="flex justify-center">
+            <div className="w-[85%]">
+              <div className="flex flex-wrap justify-center">
+                <Link href="#" className="tag">
+                  LegalTech
+                </Link>
+                <Link href="#" className="tag">
+                  Data Science
+                </Link>
+                <Link href="#" className="tag">
+                  AI Tools
+                </Link>
+                <Link href="#" className="tag">
+                  Workforce Training
+                </Link>
+                <Link href="#" className="tag">
+                  Data Analytics
+                </Link>
+                <Link href="#" className="tag">
+                  AI in Marketing
+                </Link>
+                <Link href="#" className="tag">
+                  Solutions development
+                </Link>
+                <Link href="#" className="tag">
+                  AI in Healthcare
+                </Link>
+                <Link href="#" className="tag">
+                  Machine Learning
+                </Link>
+                <Link href="#" className="tag">
+                  AI for Schools
+                </Link>
+                <Link href="#" className="tag">
+                  Hiring Talents
+                </Link>
+                <Link href="#" className="tag">
+                  Data Engineering
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

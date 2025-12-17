@@ -80,6 +80,25 @@ a {
   padding-bottom: 15px;
 }
 
+/* Course Section */
+.course-card .image-wrapper{
+  position: relative;
+  border-radius: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+.course-card {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  backdrop-filter: blur(7px);
+  border-radius: 20px;
+}
+
 /* Discover section */
 .tag {
   display: inline-block;
