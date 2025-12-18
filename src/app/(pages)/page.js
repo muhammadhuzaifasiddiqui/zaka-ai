@@ -5,6 +5,7 @@ import Image from "next/image";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { useState, useRef } from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -158,49 +159,182 @@ const page = () => {
     <>
       {/* <Navbar /> */}
 
-      {/* Faq Section */}
-      <div className="training-section mt-100">
-        <div className="container mx-auto">
-          <div className="flex items-center">
-            <div className="w-[60%]">
-              <div className="flex flex-col">
-                <h2 className="mb-7.5">
-                  Drive AI Success with the Right Talent, Training, and Trusted
-                  Expertise
-                </h2>
-              </div>
-              <div className="flex flex-col gap-4">
-                {faqData.map((item) => (
-                  <AccordionItem
-                    key={item.id}
-                    question={item.question}
-                    answer={item.answer}
-                    isOpen={item.id === activeIndex}
-                    onToggle={() => handleToggle(item.id)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            <div className="flex justify-center w-[40%]">
-              <div className="image-wrapper">
+      {/* Marquee Section */}
+      <div className="marquee-section mt-100">
+        <div className="flex items-center">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={10}
+            loop={true}
+            className="[&>.swiper-wrapper]:!ease-linear"
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            draggable={false}
+            // onTouchMove={false}
+            allowTouchMove={false}
+            dir="ltr"
+            speed={2000}
+            slidesPerView={"auto"}
+          >
+            <SwiperSlide>
+              <div className="card">
                 <Image
-                  src={"https://zaka.ai/wp-content/uploads/2025/06/Layer-2.png"}
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/output-onlinepngtools-7-1.png"
+                  }
                   alt="course"
-                  height={200}
-                  width={100}
+                  height={100}
+                  width={200}
                   unoptimized={true}
-                  className="w-full! h-full!"
+                  className="w-full! h-full! object-contain"
                 />
               </div>
-            </div>
-          </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/output-onlinepngtools-8-1-scaled.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/aub-scaled.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/output-onlinepngtools__2_-removebg-preview.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/samsung-logo-white.webp"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/micr-removebg-preview.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/output-onlinepngtools-18-scaled.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/12/output-onlinepngtools-19.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/12/AU_Logo_SINGLE_COLOR_White.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/uploads/2025/11/SDAIA_Logo-removebg-preview.png"
+                  }
+                  alt="course"
+                  height={100}
+                  width={200}
+                  unoptimized={true}
+                  className="w-full! h-full! object-contain"
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
 
       {/* Training Section */}
       <div className="training-section mt-100">
         <div className="container mx-auto">
+          <div className="flex items-center mb-16.5">
+            <div className="w-[16.67%]">
+              <div className="training-label">3 levels of training</div>
+            </div>
+            <div className="w-[83.33%]">
+              <h2>
+                Evolve with Purpose: A Journey from Foundations to Full Mastery
+              </h2>
+            </div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="training-card">
               <h5>Foundation</h5>
@@ -294,6 +428,46 @@ const page = () => {
                   </strong>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Faq Section */}
+      <div className="training-section mt-100">
+        <div className="container mx-auto">
+          <div className="flex items-center">
+            <div className="w-[60%]">
+              <div className="flex flex-col">
+                <h2 className="mb-7.5">
+                  Drive AI Success with the Right Talent, Training, and Trusted
+                  Expertise
+                </h2>
+              </div>
+              <div className="flex flex-col gap-4">
+                {faqData.map((item) => (
+                  <AccordionItem
+                    key={item.id}
+                    question={item.question}
+                    answer={item.answer}
+                    isOpen={item.id === activeIndex}
+                    onToggle={() => handleToggle(item.id)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center w-[40%]">
+              <div className="image-wrapper">
+                <Image
+                  src={"https://zaka.ai/wp-content/uploads/2025/06/Layer-2.png"}
+                  alt="course"
+                  height={200}
+                  width={100}
+                  unoptimized={true}
+                  className="w-full! h-full!"
+                />
+              </div>
             </div>
           </div>
         </div>
