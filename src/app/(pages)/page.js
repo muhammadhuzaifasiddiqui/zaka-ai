@@ -181,13 +181,31 @@ const page = () => {
           unoptimized={true}
           className="absolute -z-10 right-0 xl:top-[130px] lg:top-[120px] sm:top-[550px] top-[600px] w-[68px]! lg:w-[75px]!"
         />
-        <div className="container mx-auto">
-          <div className="flex flex-col items-center text-center">
+        <div className="container relative mx-auto">
+          <div className="flex flex-col absolute">
+            <ul>
+              <li className="mb-15">
+                <p className="text-[12px]">People Enrolled</p>
+                <p className="text-[#FF8C1A]">10K+</p>
+              </li>
+              <li className="mb-15">
+                <p className="text-[12px]">Programs Available</p>
+                <p className="text-[#FF8C1A]">20+</p>
+              </li>
+              <li className="mb-15">
+                <p className="text-[12px]">Job Security</p>
+                <p className="text-[#FF8C1A]">82%</p>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col items-center py-30 text-center">
             <h1 className="mb-7.5">
               Your <span className="highlight">Artificial Intelligence</span>{" "}
               Transformation
             </h1>
-            <Link className="hero-btn" href="#">Explore Programs</Link>
+            <Link className="hero-btn" href="#">
+              Explore Programs
+            </Link>
           </div>
         </div>
       </div>
