@@ -159,6 +159,39 @@ const page = () => {
     <>
       {/* <Navbar /> */}
 
+      {/* Hero Section */}
+      <div className="hero-section relative">
+        <Image
+          src={
+            "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/dotted-square.svg"
+          }
+          width={69}
+          height={69}
+          alt="H3"
+          unoptimized={true}
+          className="absolute -z-10 left-0 xl:top-[130px] lg:top-[120px] sm:top-[550px] top-[600px] w-[68px]! lg:w-[75px]!"
+        />
+        <Image
+          src={
+            "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/dotted-square.svg"
+          }
+          width={69}
+          height={69}
+          alt="H3"
+          unoptimized={true}
+          className="absolute -z-10 right-0 xl:top-[130px] lg:top-[120px] sm:top-[550px] top-[600px] w-[68px]! lg:w-[75px]!"
+        />
+        <div className="container mx-auto">
+          <div className="flex flex-col items-center text-center">
+            <h1 className="mb-7.5">
+              Your <span className="highlight">Artificial Intelligence</span>{" "}
+              Transformation
+            </h1>
+            <Link className="hero-btn" href="#">Explore Programs</Link>
+          </div>
+        </div>
+      </div>
+
       {/* Marquee Section */}
       <div className="marquee-section mt-100">
         <div className="flex items-center">
@@ -323,7 +356,17 @@ const page = () => {
       </div>
 
       {/* Training Section */}
-      <div className="training-section mt-100">
+      <div className="training-section relative mt-100">
+        <Image
+          src={
+            "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/dotted-square.svg"
+          }
+          width={69}
+          height={69}
+          alt="H3"
+          unoptimized={true}
+          className="absolute -z-10 left-[20px] xl:top-[130px] lg:top-[120px] sm:top-[550px] top-[600px] w-[68px]! lg:w-[75px]!"
+        />
         <div className="container mx-auto">
           <div className="flex items-center mb-16.5">
             <div className="w-[16.67%]">

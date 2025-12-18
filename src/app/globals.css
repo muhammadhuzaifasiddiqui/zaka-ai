@@ -17,6 +17,15 @@ img {
   max-width: 100%;
 }
 
+h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  letter-spacing: -4%;
+  position: relative;
+  z-index: 99999;
+  color: white;
+}
+
 h2 {
   font-size: 55px;
 }
@@ -78,6 +87,20 @@ a {
 
 .pb-15 {
   padding-bottom: 15px;
+}
+
+/* Hero Section */
+.highlight {
+  color: #ff8c1a;
+}
+
+.hero-btn {
+  border: solid 1px #ff8c1a;
+  background-color: #ff8c1a;
+  color: #050402;
+  border-radius: 20px;
+  padding: 12px 24px;
+  font-weight: bold;
 }
 
 /* marquee sectio */
