@@ -39,7 +39,7 @@ export default function FeatureSlider() {
             <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
 
                 {/* LEFT SIDE: The Visual Slider */}
-                <div className="relative flex h-[400px] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-[#0f0f0f] shadow-2xl lg:h-[500px]">
+                <div className="relative flex w-full items-center justify-center overflow-hidden">
                     {features.map((feature, index) => (
                         <div
                             key={feature.id}
@@ -59,7 +59,7 @@ export default function FeatureSlider() {
                 </div>
 
                 {/* RIGHT SIDE: Details & Navigation */}
-                <div className="relative flex h-[400px] flex-col rounded-2xl border border-white/10 bg-[#0f0f0f] px-8 py-12 lg:h-[500px] lg:px-16">
+                <div className="relative flex flex-col rounded-2xl  px-8 py-12 lg:px-16">
 
                     {/* UPDATED POSITIONING:
              Changed 'top-1/2 -translate-y-1/2' (center) -> 'top-12' (top align)
