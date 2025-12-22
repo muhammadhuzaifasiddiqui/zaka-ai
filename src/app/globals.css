@@ -151,6 +151,7 @@ a {
     ),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
+  border: 1px solid #ff8c1a;
   border-radius: 20px;
   padding: 40px 30px;
 }

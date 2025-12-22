@@ -10,6 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import PyramidSlider from "../components/layout/PyramidSlider";
 
 const faqData = [
   {
@@ -396,7 +397,10 @@ const page = () => {
               </h2>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <PyramidSlider />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-7">
             <div className="training-card">
               <h5>Foundation</h5>
               <p className="mb-[15px]">
