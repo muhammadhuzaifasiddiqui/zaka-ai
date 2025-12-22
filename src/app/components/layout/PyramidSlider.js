@@ -40,7 +40,7 @@ export default function FeatureSlider() {
   return (
     <div className="flex items-center justify-center">
       {/* Main Container */}
-      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 max-w-6xl">
+      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
         {/* LEFT SIDE: The Visual Slider */}
         <div className="featured-left relative flex w-full items-center justify-center overflow-hidden">
           {/* Default Image Layer */}
@@ -83,14 +83,14 @@ export default function FeatureSlider() {
 
         {/* RIGHT SIDE: Details & Navigation */}
         <div
-          className="relative flex flex-col justify-center px-8 lg:px-16 h-[500px]"
+          className="relative featured-right flex flex-col justify-center px-8 lg:px-16 h-[500px]"
           onMouseLeave={() => setActiveIndex(null)}
         >
           {/* FIX: Detached Bullet Container 
              Placed absolutely at Top-Right (top-12 right-8).
              This separates them from the text items below.
           */}
-          <div className="absolute right-8 top-12 flex flex-col gap-2 z-30">
+          <div className="absolute right-8 top-12 flex flex-col z-30">
             {features.map((_, idx) => (
               <div
                 key={idx}
@@ -105,7 +105,7 @@ export default function FeatureSlider() {
           </div>
 
           {/* Text Content List */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-15">
             {features.map((feature, index) => {
               const isActive = activeindex === index;
 

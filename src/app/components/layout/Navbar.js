@@ -140,11 +140,11 @@ export default function Navbar() {
             : "bg-transparent py-6"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
           {/* LEFT: Toggles */}
           <div className="flex items-center gap-4">
-            <div className="flex h-10 w-20 items-center rounded-full border border-orange-500/50 bg-black px-1">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-black">
+            <div className="flex h-10 w-20 items-center rounded-full border border-orange-500/50 bg-black">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-black">
                 <Moon size={16} />
               </div>
               <div className="flex h-8 w-8 items-center justify-center text-gray-500">

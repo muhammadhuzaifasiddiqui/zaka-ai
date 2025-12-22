@@ -143,9 +143,15 @@ a {
   margin-bottom: 20px;
 }
 
-.featured-left{}
+.featured-left {
+  border: 1px solid #ff8c1a;
+  border-radius: 20px;
+}
 
-.featured-right{}
+.featured-right {
+  border: 1px solid #ff8c1a;
+  border-radius: 20px;
+}
 
 .training-card {
   background: linear-gradient(
