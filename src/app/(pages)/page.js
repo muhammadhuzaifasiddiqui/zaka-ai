@@ -158,10 +158,10 @@ const page = () => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/* Hero Section */}
-      <div className="hero-section relative">
+      <div className="hero-section relative mt-35">
         <Image
           src={
             "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/dotted-square.svg"

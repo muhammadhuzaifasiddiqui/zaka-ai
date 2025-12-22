@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-// import Image from "next/image"; // Uncomment if using Next.js Image
+import Image from "next/image";
 
 // 1. Define your data
 const features = [
@@ -38,20 +38,23 @@ export default function FeatureSlider() {
   const [activeindex, setActiveIndex] = useState(null);
 
   return (
-    <div className="flex items-center justify-center bg-black min-h-screen p-4">
+    <div className="flex items-center justify-center">
       {/* Main Container */}
       <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2 max-w-6xl">
         {/* LEFT SIDE: The Visual Slider */}
         <div className="featured-left relative flex w-full items-center justify-center overflow-hidden">
           {/* Default Image Layer */}
           <div
-            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ease-in-out ${
+            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
               activeindex === null ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
-            <img
+            <Image
               src={defaultImage}
-              alt="Default"
+              alt="payramid"
+              height={450}
+              width={100}
+              unoptimized={true}
               className="h-full w-full object-contain p-8"
             />
           </div>
@@ -60,15 +63,19 @@ export default function FeatureSlider() {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ease-in-out ${
+              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
                 activeindex === index ? "opacity-100 z-20" : "opacity-0 z-0"
               }`}
             >
-              <img
+              <Image
                 src={feature.image}
                 alt={feature.title}
+                height={450}
+                width={100}
+                unoptimized={true}
                 className="h-full w-full object-contain p-8"
               />
+              <img />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
           ))}
