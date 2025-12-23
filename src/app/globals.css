@@ -143,15 +143,16 @@ a {
   margin-bottom: 20px;
 }
 
-.featured-left {
+.featured-left-box {
+  border: 1px solid #ff8c1a;
+  border-radius: 20px;
+  padding: 44px;
+}
+
+.featured-right-box {
   border: 1px solid #ff8c1a;
   border-radius: 20px;
   padding: 40px;
-}
-
-.featured-right {
-  border: 1px solid #ff8c1a;
-  border-radius: 20px;
 }
 
 .default-image-wrapper {

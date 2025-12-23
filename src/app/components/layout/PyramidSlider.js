@@ -43,7 +43,7 @@ export default function FeatureSlider() {
       {/* <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2"> */}
       <div className="flex lg:flex-row flex-col w-full gap-8">
         {/* LEFT SIDE: The Visual Slider */}
-        <div className="featured-left relative flex w-[59%] items-center justify-center overflow-hidden">
+        <div className="featured-left-box relative flex w-[59%] items-center justify-center overflow-hidden">
           {/* Default Image Layer */}
           <div
             className={`default-image-wrapper absolute flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
@@ -56,7 +56,7 @@ export default function FeatureSlider() {
               height={450}
               width={100}
               unoptimized={true}
-              className="object-contain p-8 max-h-112.5 max-w-full"
+              className="object-contain max-h-112.5 max-w-full"
             />
           </div>
 
@@ -74,7 +74,7 @@ export default function FeatureSlider() {
                 height={450}
                 width={100}
                 unoptimized={true}
-                className="object-contain p-8"
+                className="object-contain max-h-112.5 max-w-full"
               />
               <img />
               <div className="right-image-wrapper absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -84,29 +84,29 @@ export default function FeatureSlider() {
 
         {/* RIGHT SIDE: Details & Navigation */}
         <div
-          className="relative featured-right flex flex-col w-[41%] justify-center px-8 lg:px-16 h-[500px]"
+          className="relative featured-right-box flex flex-col w-[41%] justify-center h-[500px]"
           onMouseLeave={() => setActiveIndex(null)}
         >
           {/* FIX: Detached Bullet Container 
              Placed absolutely at Top-Right (top-12 right-8).
              This separates them from the text items below.
           */}
-          <div className="absolute right-8 top-12 flex flex-col z-30">
+          <div className="absolute right-6 top-10 flex flex-col gap-2.5 z-30">
             {features.map((_, idx) => (
               <div
                 key={idx}
                 onMouseEnter={() => setActiveIndex(idx)}
-                className={`w-1 rounded-full cursor-pointer transition-all duration-300 ${
+                className={`w-[2px] rounded-full cursor-pointer transition-all duration-300 ${
                   activeindex === idx
-                    ? "h-12 bg-orange-500" // Active
-                    : "h-12 bg-white/10 hover:bg-white/30" // Inactive
+                    ? "h-10 bg-orange-500" // Active
+                    : "h-10 bg-[#404040]" // Inactive
                 }`}
               />
             ))}
           </div>
 
           {/* Text Content List */}
-          <div className="flex flex-col gap-15">
+          <div className="flex flex-col gap-20">
             {features.map((feature, index) => {
               const isActive = activeindex === index;
 
