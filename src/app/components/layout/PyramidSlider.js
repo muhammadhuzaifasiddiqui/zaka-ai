@@ -114,7 +114,7 @@ export default function FeatureSlider() {
                 <div
                   key={feature.id}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className={`group relative flex cursor-pointer items-start gap-6 transition-all duration-300 ${
+                  className={`group relative flex cursor-pointer items-center gap-6 transition-all duration-300 ${
                     isActive ? "opacity-100" : "opacity-40"
                   }`}
                 >
@@ -137,13 +137,15 @@ export default function FeatureSlider() {
                   {/* Text Description */}
                   <div className="flex flex-col pr-8">
                     <h3
-                      className={`text-xl font-bold transition-colors duration-300 ${
-                        isActive ? "text-white" : "text-white/80"
+                      className={`text-[19px] mb-4 font-semibold duration-300 ${
+                        isActive ? "text-white" : "text-white"
                       }`}
                     >
                       {feature.title}
                     </h3>
-                    <p className="mt-1 text-sm leading-relaxed text-gray-400">
+                    <p
+                      className="text-[16px] text-[#FF8C1A]"
+                    >
                       {feature.description}
                     </p>
                   </div>
