@@ -114,13 +114,13 @@ export default function FeatureSlider() {
                 <div
                   key={feature.id}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className={`group relative flex cursor-pointer items-center gap-8 transition-all duration-300 py-5 px-4 rounded-[40px] ${
+                  className={`group relative flex cursor-pointer items-center gap-8 transition-all duration-300 py-4 px-4 rounded-[40px] ${
                     isActive ? "bg-[#FF8C1A]" : "bg-transparent"
                   }`}
                 >
                   {/* Circle Number */}
                   <div
-                    className={`flex h-22 w-22 gap-2 flex-shrink-0 border-1 flex-col items-center justify-center rounded-full transition-colors duration-300 ${
+                    className={`flex h-25 w-25 gap-1.5 flex-shrink-0 border-1 flex-col items-center justify-center rounded-full transition-colors duration-300 ${
                       isActive ? "border-black" : "border-[#FF8C1A]"
                     }`}
                   >
