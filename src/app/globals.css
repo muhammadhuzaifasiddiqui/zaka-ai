@@ -146,11 +146,24 @@ a {
 .featured-left {
   border: 1px solid #ff8c1a;
   border-radius: 20px;
+  padding: 40px;
 }
 
 .featured-right {
   border: 1px solid #ff8c1a;
   border-radius: 20px;
+}
+
+.default-image-wrapper {
+  height: 100%;
+}
+
+.left-image-wrapper {
+  max-width: 450px;
+}
+
+.right-image-wrapper {
+  max-width: 450px;
 }
 
 .training-card {

@@ -40,12 +40,13 @@ export default function FeatureSlider() {
   return (
     <div className="flex items-center justify-center">
       {/* Main Container */}
-      <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
+      {/* <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2"> */}
+      <div className="flex lg:flex-row flex-col w-full gap-8">
         {/* LEFT SIDE: The Visual Slider */}
-        <div className="featured-left relative flex w-full items-center justify-center overflow-hidden">
+        <div className="featured-left relative flex w-[59%] items-center justify-center overflow-hidden">
           {/* Default Image Layer */}
           <div
-            className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
+            className={`default-image-wrapper absolute flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
               activeindex === null ? "opacity-100 z-10" : "opacity-0 z-0"
             }`}
           >
@@ -55,7 +56,7 @@ export default function FeatureSlider() {
               height={450}
               width={100}
               unoptimized={true}
-              className="h-full w-full object-contain p-8"
+              className="object-contain p-8 max-h-112.5 max-w-full"
             />
           </div>
 
@@ -63,7 +64,7 @@ export default function FeatureSlider() {
           {features.map((feature, index) => (
             <div
               key={feature.id}
-              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
+              className={`left-image-wrapper absolute flex items-center justify-center transition-opacity duration-1000 ease-in-out ${
                 activeindex === index ? "opacity-100 z-20" : "opacity-0 z-0"
               }`}
             >
@@ -73,17 +74,17 @@ export default function FeatureSlider() {
                 height={450}
                 width={100}
                 unoptimized={true}
-                className="h-full w-full object-contain p-8"
+                className="object-contain p-8"
               />
               <img />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="right-image-wrapper absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
           ))}
         </div>
 
         {/* RIGHT SIDE: Details & Navigation */}
         <div
-          className="relative featured-right flex flex-col justify-center px-8 lg:px-16 h-[500px]"
+          className="relative featured-right flex flex-col w-[41%] justify-center px-8 lg:px-16 h-[500px]"
           onMouseLeave={() => setActiveIndex(null)}
         >
           {/* FIX: Detached Bullet Container 
