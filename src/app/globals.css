@@ -152,7 +152,7 @@ a {
 .featured-right-box {
   border: 1px solid #ff8c1a;
   border-radius: 20px;
-  padding: 40px;
+  padding: 40px 40px 40px 80px;
 }
 
 .default-image-wrapper {
