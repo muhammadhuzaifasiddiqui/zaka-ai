@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Moon, Sun, ChevronRight } from "lucide-react";
 
 // --- 1. RESTRUCTURED DATA ---
@@ -92,7 +93,7 @@ export default function Navbar() {
 
   // FIX: Removed TypeScript syntax <number | null> to resolve ReferenceError
   const [activeMenuIndex, setActiveMenuIndex] = useState(null);
-  
+
   // FIX: Removed TypeScript syntax <number | null> to resolve ReferenceError
   // Defaults to null so nothing shows in the 3rd column initially
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(null);
@@ -128,7 +129,8 @@ export default function Navbar() {
   }, [activeMenuIndex]);
 
   // Helper to get current menu item safely
-  const currentItem = activeMenuIndex !== null ? menuItems[activeMenuIndex] : null;
+  const currentItem =
+    activeMenuIndex !== null ? menuItems[activeMenuIndex] : null;
 
   return (
     <>
@@ -166,9 +168,19 @@ export default function Navbar() {
             className="absolute left-1/2 -translate-x-1/2 transform"
           >
             <h1 className="text-4xl font-black tracking-tighter">
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent">
+              <Image
+                src={
+                  "https://zaka.ai/wp-content/uploads/2025/06/ZAKA-FINAL-LOGOS-06-scaled-e1753871364260.png"
+                }
+                width={69}
+                height={69}
+                alt="H3"
+                unoptimized={true}
+                className="max-h-[50px] object-contain"
+              />
+              {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent">
                 ZAKA
-              </span>
+              </span> */}
             </h1>
           </Link>
 
@@ -253,7 +265,6 @@ export default function Navbar() {
                 {currentItem.categories ? (
                   // --- NESTED LAYOUT (3 columns visual effect) ---
                   <div className="grid grid-cols-2 gap-8 h-full items-center">
-                    
                     {/* Sub-Category List (Middle Column) */}
                     <div className="border-r border-white/10 pr-6 h-auto py-4">
                       <div className="flex flex-col space-y-6">
@@ -278,21 +289,21 @@ export default function Navbar() {
                       {/* Check if a category is selected before rendering items */}
                       {activeCategoryIndex !== null && (
                         <div className="flex flex-col space-y-4 animate-in fade-in slide-in-from-left-2 duration-200">
-                          {currentItem.categories[activeCategoryIndex].items.map(
-                            (item, idx) => (
-                              <div
-                                key={idx}
-                                className="border-b border-white/10 pb-3"
+                          {currentItem.categories[
+                            activeCategoryIndex
+                          ].items.map((item, idx) => (
+                            <div
+                              key={idx}
+                              className="border-b border-white/10 pb-3"
+                            >
+                              <Link
+                                href={item.href}
+                                className="text-xl font-medium text-gray-300 hover:text-white hover:pl-2 transition-all"
                               >
-                                <Link
-                                  href={item.href}
-                                  className="text-xl font-medium text-gray-300 hover:text-white hover:pl-2 transition-all"
-                                >
-                                  {item.name}
-                                </Link>
-                              </div>
-                            )
-                          )}
+                                {item.name}
+                              </Link>
+                            </div>
+                          ))}
                         </div>
                       )}
                     </div>

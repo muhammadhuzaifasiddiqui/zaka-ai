@@ -56,7 +56,7 @@ export default function FeatureSlider() {
               height={450}
               width={100}
               unoptimized={true}
-              className="object-contain max-h-112.5 max-w-full"
+              className="object-contain max-h-112.5 max-w-full p-1"
             />
           </div>
 
@@ -74,7 +74,7 @@ export default function FeatureSlider() {
                 height={450}
                 width={100}
                 unoptimized={true}
-                className="object-contain max-h-112.5 max-w-full"
+                className="object-contain max-h-112.5 max-w-full p-1"
               />
               <img />
               <div className="right-image-wrapper absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -91,7 +91,7 @@ export default function FeatureSlider() {
              Placed absolutely at Top-Right (top-12 right-8).
              This separates them from the text items below.
           */}
-          <div className="absolute right-6 top-10 flex flex-col gap-2.5 z-30">
+          <div className="absolute right-6 top-6 flex flex-col gap-2.5 z-30">
             {features.map((_, idx) => (
               <div
                 key={idx}
@@ -106,7 +106,7 @@ export default function FeatureSlider() {
           </div>
 
           {/* Text Content List */}
-          <div className="flex flex-col gap-20">
+          <div className="flex flex-col gap-4">
             {features.map((feature, index) => {
               const isActive = activeindex === index;
 
@@ -114,23 +114,28 @@ export default function FeatureSlider() {
                 <div
                   key={feature.id}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className={`group relative flex cursor-pointer items-center gap-8 transition-all duration-300 ${
-                    isActive ? "opacity-100" : "opacity-40"
+                  className={`group relative flex cursor-pointer items-center gap-8 transition-all duration-300 py-5 px-4 rounded-[40px] ${
+                    isActive ? "bg-[#FF8C1A]" : "bg-transparent"
                   }`}
                 >
                   {/* Circle Number */}
                   <div
-                    className={`flex h-14 w-14 flex-shrink-0 flex-col items-center justify-center rounded-full border-2 transition-colors duration-300 ${
-                      isActive
-                        ? "border-orange-500 text-white"
-                        : "border-white/20 text-white/60"
+                    className={`flex h-22 w-22 gap-2 flex-shrink-0 border-1 flex-col items-center justify-center rounded-full transition-colors duration-300 ${
+                      isActive ? "border-black" : "border-[#FF8C1A]"
                     }`}
                   >
-                    <span className="text-lg font-bold leading-none"
+                    <span
+                      className={`text-lg font-bold leading-none ${
+                        isActive ? "text-black" : "text-white"
+                      }`}
                     >
                       {feature.level}
                     </span>
-                    <span className="text-[10px] uppercase tracking-wider">
+                    <span
+                      className={`text-[10px] uppercase tracking-wider ${
+                        isActive ? "text-black" : "text-white"
+                      }`}
+                    >
                       Level
                     </span>
                   </div>
@@ -138,14 +143,16 @@ export default function FeatureSlider() {
                   {/* Text Description */}
                   <div className="flex flex-col pr-8">
                     <h3
-                      className={`text-[#fff] text-[19px] mb-4 font-semibold duration-300 ${
-                        isActive ? "text-white" : "text-white"
+                      className={`text-[19px] mb-4 font-semibold duration-300 ${
+                        isActive ? "text-black" : "text-white"
                       }`}
                     >
                       {feature.title}
                     </h3>
                     <p
-                      className="text-[16px] text-[#FF8C1A]"
+                      className={`text-[16px] text-[#FF8C1A] ${
+                        isActive ? "text-black" : "text-[#FF8C1A]"
+                      }`}
                     >
                       {feature.description}
                     </p>

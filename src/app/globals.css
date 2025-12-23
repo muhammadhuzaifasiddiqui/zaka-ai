@@ -144,15 +144,27 @@ a {
 }
 
 .featured-left-box {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   border: 1px solid #ff8c1a;
   border-radius: 20px;
   padding: 44px;
 }
 
 .featured-right-box {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   border: 1px solid #ff8c1a;
   border-radius: 20px;
-  padding: 40px 40px 40px 80px;
+  padding: 40px 40px 40px 40px;
 }
 
 .default-image-wrapper {
