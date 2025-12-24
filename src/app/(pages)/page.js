@@ -155,7 +155,6 @@ const page = () => {
   const handleToggle = (id) => {
     setActiveIndex(id === activeIndex ? null : id);
   };
-
   return (
     <>
       <Navbar />
@@ -182,8 +181,8 @@ const page = () => {
           unoptimized={true}
           className="absolute -z-10 right-0 xl:top-[130px] lg:top-[120px] sm:top-[550px] top-[600px] w-[68px]! lg:w-[75px]!"
         />
-        <div className="container relative mx-auto">
-          <div className="flex flex-col absolute">
+        <div className="container relative mx-auto -z-10">
+          <div className="flex flex-col absolute ">
             <ul>
               <li className="mb-15">
                 <p className="text-[12px]">People Enrolled</p>

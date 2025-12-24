@@ -4,6 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Moon, Sun, ChevronRight } from "lucide-react";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/autoplay";
 
 // --- 1. RESTRUCTURED DATA ---
 const menuItems = [
@@ -132,33 +136,83 @@ export default function Navbar() {
   const currentItem =
     activeMenuIndex !== null ? menuItems[activeMenuIndex] : null;
 
+  const content = "Learn how ZAKA is transforming the AI landscape in MENA";
+  const items = new Array(10).fill(content);
   return (
     <>
       {/* NAVBAR HEADER */}
       <header
-        className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
+        className={`fixed bg-black! top-0 left-0 z-50 w-full transition-all duration-300 ${
           isScrolled || isOpen
-            ? "bg-black/90 backdrop-blur-md py-4"
-            : "bg-transparent py-6"
+            ? "bg-black! pb-4"
+            : "bg-black! pb-6"
         }`}
       >
+        <div className="w-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white overflow-hidden py-2 mb-6 relative z-50">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={0}
+            slidesPerView="auto"
+            loop={true}
+            speed={5000}
+            allowTouchMove={false}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            // We remove the specific class that needed styled-jsx
+            className="ticker-swiper"
+          >
+            {items.map((text, index) => (
+              <SwiperSlide key={index} style={{ width: "auto" }}>
+                <div className="flex items-center gap-2 px-2 font-bold text-sm tracking-wide whitespace-nowrap">
+                  <Image
+                    src={
+                      "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/icons/nws-ico.png"
+                    }
+                    width={16}
+                    height={16}
+                    alt="zaka-logo"
+                    unoptimized={true}
+                    className="h-[16px]! object-contain"
+                  />
+                  <span>{text}</span>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           {/* LEFT: Toggles */}
           <div className="flex items-center gap-4">
-            <div className="flex h-10 w-20 items-center rounded-full border border-orange-500/50 bg-black">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500 text-black">
+            <div className="flex h-10 w-20 items-center justify-between rounded-full border border-[#FF8C1A] bg-black">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF8C1A] text-black">
                 <Moon size={16} />
               </div>
-              <div className="flex h-8 w-8 items-center justify-center text-gray-500">
-                <Sun size={16} />
+              <div className="flex pr-2 h-8 w-8 items-center justify-center text-gray-500">
+                <Image
+                  src={
+                    "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/icons/sun-white.svg"
+                  }
+                  width={25}
+                  height={25}
+                  alt="H3"
+                  unoptimized={true}
+                  className="object-contain"
+                />
               </div>
             </div>
 
-            <div className="flex h-10 w-20 items-center justify-between rounded-full border border-orange-500/50 bg-black px-3 text-xs font-bold text-orange-500">
-              <span>AR</span>
-              <span className="rounded-full bg-orange-500 px-1 py-0.5 text-[10px] text-black">
+            <div className="flex h-10 w-20 items-center justify-between pl-2 rounded-full border border-[#FF8C1A] bg-black font-bold text-[#FF8C1A]">
+              {/* <span>AR</span> */}
+              <div className="">AR</div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF8C1A] text-black">
                 EN
-              </span>
+              </div>
+              {/* <span className="rounded-full bg-[#FF8C1A] px-1 py-0.5 text-[10px] text-black">
+                EN
+              </span> */}
             </div>
           </div>
 
@@ -188,19 +242,19 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="group flex items-center gap-2 rounded-full border border-orange-500 bg-black px-5 py-2 text-white transition-all hover:bg-orange-950"
+              className="group flex h-10 w-28 items-center justify-between gap-2 rounded-full border border-[#FF8C1A] bg-black transition-all"
             >
-              <span className="font-medium">Menu</span>
-              <div className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-500 text-black">
+              <span className="font-medium pl-2">Menu</span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF8C1A] text-black">
                 <Menu size={14} />
               </div>
             </button>
 
-            <div className="h-8 w-[1px] bg-orange-500/50 hidden md:block" />
+            <div className="h-10 w-[1px] bg-[#FF8C1A] hidden md:block" />
 
             <Link
               href="/contact"
-              className="hidden rounded-full bg-orange-500 px-6 py-2.5 font-bold text-black transition-transform hover:scale-105 md:block"
+              className="hidden rounded-full bg-[#FF8C1A] px-6 py-2.5 font-bold text-black! transition-transform md:block"
             >
               Contact Us
             </Link>
