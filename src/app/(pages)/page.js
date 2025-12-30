@@ -197,20 +197,6 @@ const page = () => {
                 <p className="text-[#FF8C1A]">82%</p>
               </li>
             </ul>
-            <ul>
-              <li className="mb-15">
-                <p className="text-[12px]">People Enrolled</p>
-                <p className="text-[#FF8C1A]">10K+</p>
-              </li>
-              <li className="mb-15">
-                <p className="text-[12px]">Programs Available</p>
-                <p className="text-[#FF8C1A]">20+</p>
-              </li>
-              <li className="mb-15">
-                <p className="text-[12px]">Job Security</p>
-                <p className="text-[#FF8C1A]">82%</p>
-              </li>
-            </ul>
           </div>
           <div className="flex flex-col items-center py-30 text-center">
             <h1 className="mb-7.5">
