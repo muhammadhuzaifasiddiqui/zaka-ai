@@ -225,7 +225,7 @@ const page = () => {
             draggable={false}
             // onTouchMove={false}
             allowTouchMove={false}
-            dir="ltr"
+            dir="rtl"
             speed={2000}
             slidesPerView={"auto"}
           >

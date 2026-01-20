@@ -94,6 +94,12 @@ a {
   transition-timing-function: linear !important;
 }
 
+.mega-menu-background {
+  background:
+    linear-gradient(0deg, #0009 0% 100%), linear-gradient(#ffffff26, #ffffff26);
+    padding: 20px 20px;
+}
+
 /* Hero Section */
 .highlight {
   color: #ff8c1a;
@@ -149,11 +155,8 @@ a {
 }
 
 .featured-left-box {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   border: 1px solid #ff8c1a;
   border-radius: 20px;
@@ -161,11 +164,8 @@ a {
 }
 
 .featured-right-box {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   border: 1px solid #ff8c1a;
   border-radius: 20px;
@@ -185,11 +185,8 @@ a {
 }
 
 .training-card {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
   border: 1px solid #ff8c1a;
@@ -232,11 +229,8 @@ a {
 }
 
 .course-card {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
   border-radius: 20px;
@@ -249,11 +243,8 @@ a {
   border: 1px solid #ff8c1a;
   border-radius: 24px;
   margin: 8px;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
 }
@@ -266,7 +257,8 @@ a {
 }
 
 .blog-section .swiper-slide {
-  background: linear-gradient(0deg, #00000099 0%, #00000099 100%),
+  background:
+    linear-gradient(0deg, #00000099 0%, #00000099 100%),
     linear-gradient(#ffffff26, #ffffff26);
   backdrop-filter: blur(7px);
   border-radius: 24px;
@@ -283,11 +275,8 @@ a {
 .blog-slider-wrapper {
   padding: 100px 40px;
   width: 100%;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
   border: 1px solid #ff8c1a;
@@ -298,11 +287,8 @@ a {
 .bg-newsletter {
   padding: 50px;
   width: 100%;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
   border: 1px solid #ff8c1a;
@@ -310,7 +296,6 @@ a {
 }
 
 /* social-media-section */
-
 .social-media-section .social-icons {
   width: 40px;
   height: 40px;
@@ -322,11 +307,8 @@ a {
   width: 100%;
   border: solid 1px #ff8c1a;
   border-radius: 20px;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
 }
@@ -345,14 +327,10 @@ a {
 }
 
 /* Contact */
-
 .contact-box {
   padding: 50px 40px;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.6) 100%
-    ),
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
     linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   backdrop-filter: blur(7px);
   border: 1px solid #ff8c1a;
@@ -412,13 +390,37 @@ a {
   }
 }
 
-@media screen and (max-width: 1023.97px) {
+@media screen and (max-width: 1199.97px) {
+  .container {
+    max-width: 1024px;
+  }
 }
+
+@media screen and (max-width: 1023.97px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .marquee-section .card {
+  height: 120px;
+  width: 234px;
+  padding: 18px 26px;
+  border: 1px solid #ff8c1a;
+  border-radius: 20px;
+  background-color: transparent;
+  background: unset;
+  flex-shrink: 0;
+}
+}
+
 @media screen and (max-width: 767.97px) {
 }
+
 @media screen and (max-width: 424.97px) {
 }
+
 @media screen and (max-width: 374.97px) {
 }
+
 @media screen and (max-width: 319.97px) {
 }

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Moon, Sun, ChevronRight } from "lucide-react";
+import { Menu, X, Moon, Sun, ChevronRight, ChevronDown } from "lucide-react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -102,6 +102,9 @@ export default function Navbar() {
   // Defaults to null so nothing shows in the 3rd column initially
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(null);
 
+  // --- MOBILE STATE ---
+  const [openMobileIndex, setOpenMobileIndex] = useState(null);
+
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -124,6 +127,7 @@ export default function Navbar() {
   useEffect(() => {
     if (!isOpen) {
       setActiveMenuIndex(null);
+      setOpenMobileIndex(null); // Reset mobile menu on close
     }
   }, [isOpen]);
 
@@ -131,6 +135,10 @@ export default function Navbar() {
   useEffect(() => {
     setActiveCategoryIndex(null);
   }, [activeMenuIndex]);
+
+  const toggleMobileItem = (index) => {
+    setOpenMobileIndex(openMobileIndex === index ? null : index);
+  };
 
   // Helper to get current menu item safely
   const currentItem =
@@ -142,11 +150,10 @@ export default function Navbar() {
     <>
       {/* NAVBAR HEADER */}
       <header
-        className={`fixed bg-black! top-0 left-0 z-50 w-full transition-all duration-300 ${
-          isScrolled || isOpen
+        className={`hidden xl:flex fixed bg-black! top-0 left-0 z-50 w-full transition-all duration-300 ${isScrolled || isOpen
             ? "bg-black! pb-4"
             : "bg-black! pb-6"
-        }`}
+          }`}
       >
         <div className="w-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white overflow-hidden py-2 mb-6 relative z-50">
           <Swiper
@@ -262,11 +269,95 @@ export default function Navbar() {
         </div>
       </header>
 
+      <header
+        className={`block xl:hidden fixed bg-black! top-0 left-0 z-50 w-full transition-all duration-300 ${isScrolled || isOpen
+            ? "bg-black! pb-4"
+            : "bg-black! pb-6"
+          }`}
+      >
+        <div className="w-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 text-white overflow-hidden py-2 mb-6 relative z-50">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={0}
+            slidesPerView="auto"
+            loop={true}
+            speed={5000}
+            allowTouchMove={false}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            // We remove the specific class that needed styled-jsx
+            className="ticker-swiper"
+          >
+            {items.map((text, index) => (
+              <SwiperSlide key={index} style={{ width: "auto" }}>
+                <div className="flex items-center gap-2 px-2 font-bold text-sm tracking-wide whitespace-nowrap">
+                  <Image
+                    src={
+                      "https://zaka.ai/wp-content/themes/zaka-theme/assets/images/icons/nws-ico.png"
+                    }
+                    width={16}
+                    height={16}
+                    alt="zaka-logo"
+                    unoptimized={true}
+                    className="h-[16px]! object-contain"
+                  />
+                  <span>{text}</span>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        <div className="flex container justify-between mx-auto">
+          {/* CENTER: Logo */}
+          <Link
+            href="/"
+            className=""
+          >
+            <div>
+              <Image
+                src={
+                  "https://zaka.ai/wp-content/uploads/2025/06/ZAKA-FINAL-LOGOS-06-scaled-e1753871364260.png"
+                }
+                width={69}
+                height={69}
+                alt="H3"
+                unoptimized={true}
+                className="max-h-[50px] object-contain"
+              />
+            </div>
+          </Link>
+
+          {/* RIGHT: Menu & Contact */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="group cursor-pointer flex h-10 w-28 items-center justify-between gap-2 rounded-full border border-[#FF8C1A] bg-black transition-all"
+            >
+              <span className="font-medium pl-2">Menu</span>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF8C1A] text-black">
+                <Menu size={14} />
+              </div>
+            </button>
+
+            {/* <div className="h-10 w-[1px] bg-[#FF8C1A] hidden md:block" />
+
+            <Link
+              href="/contact"
+              className="hidden rounded-full bg-[#FF8C1A] px-6 py-2.5 font-bold text-black! transition-transform md:block"
+            >
+              Contact Us
+            </Link> */}
+          </div>
+        </div>
+      </header>
+
       {/* MEGA MENU OVERLAY */}
       <div
-        className={`fixed inset-0 z-40 bg-black pt-32 transition-transform duration-500 ease-in-out ${
-          isOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`flex fixed inset-0 z-40 bg-black pt-32 transition-transform duration-500 ease-in-out ${isOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
       >
         <div className="mx-auto grid h-full max-w-7xl grid-cols-1 md:grid-cols-12 px-6 pb-20">
           {/* --- LEFT COLUMN: Main Categories --- */}
@@ -282,20 +373,18 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className={`text-3xl font-bold transition-colors md:text-5xl ${
-                      isActive
+                    className={`text-3xl font-bold transition-colors md:text-5xl ${isActive
                         ? "text-orange-500"
                         : "text-white group-hover:text-orange-500"
-                    }`}
+                      }`}
                   >
                     {item.label}
                   </Link>
                   <ChevronRight
-                    className={`transition-all ${
-                      isActive
+                    className={`transition-all ${isActive
                         ? "translate-x-2 text-orange-500 opacity-100"
                         : "text-white opacity-0 group-hover:translate-x-2 group-hover:text-orange-500 group-hover:opacity-100"
-                    }`}
+                      }`}
                   />
                 </div>
               );
@@ -326,11 +415,10 @@ export default function Navbar() {
                           <div
                             key={idx}
                             onMouseEnter={() => setActiveCategoryIndex(idx)}
-                            className={`text-xl font-bold cursor-pointer transition-colors ${
-                              activeCategoryIndex === idx
+                            className={`text-xl font-bold cursor-pointer transition-colors ${activeCategoryIndex === idx
                                 ? "text-orange-500"
                                 : "text-white hover:text-orange-500"
-                            }`}
+                              }`}
                           >
                             {cat.name}
                           </div>
@@ -392,6 +480,91 @@ export default function Navbar() {
                 )}
               </div>
             )}
+          </div>
+        </div>
+      </div>
+
+      <button onClick={() => setIsOpen(!isOpen)}>Toggle Menu</button>
+
+      <div
+        className={`fixed inset-0 z-40 bg-black pt-24 md:pt-32 transition-transform duration-500 ease-in-out overflow-y-auto ${isOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+      >
+        <div className="flex container mx-auto min-[1024px]:hidden flex-col pt-24 pb-24 w-full h-full overflow-y-auto">
+          <div className="mega-menu-background flex flex-col space-y-2 mt-4">
+            {menuItems.map((item, idx) => {
+              const isOpenMobile = openMobileIndex === idx;
+
+              return (
+                <div key={item.id} className="">
+                  {/* Accordion Header */}
+                  <div
+                    onClick={() => toggleMobileItem(idx)}
+                    className="flex items-center justify-between py-3 cursor-pointer group"
+                  >
+                    <span
+                      className={`text-2xl font-medium transition-colors ${isOpenMobile ? "text-orange-500" : "text-"
+                        }`}
+                    >
+                      {item.label}
+                    </span>
+                    <ChevronDown
+                      className={`transition-transform duration-300 ${isOpenMobile
+                          ? "rotate-180 text-orange-500"
+                          : "text-white"
+                        }`}
+                    />
+                  </div>
+
+                  {/* Accordion Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpenMobile ? "max-h-[1000px] opacity-100 mb-6" : "max-h-0 opacity-0"
+                      }`}
+                  >
+                    <p className="text-gray-400 text-sm mb-4 px-1">
+                      {item.description}
+                    </p>
+
+                    <div className="flex flex-col space-y-4 pl-2">
+                      {/* CASE 1: Standard Sublinks (e.g., Inside ZAKA) */}
+                      {item.subLinks &&
+                        item.subLinks.map((subLink, sIdx) => (
+                          <Link
+                            key={sIdx}
+                            href={subLink.href}
+                            className="text-lg text-gray-300 hover:text-white py-1 block"
+                          >
+                            {subLink.name}
+                          </Link>
+                        ))}
+
+                      {/* CASE 2: Categories (e.g., Programs) */}
+                      {item.categories &&
+                        item.categories.map((cat, cIdx) => (
+                          <div key={cIdx} className="mt-2">
+                            {/* Category Title */}
+                            <h4 className="text-orange-400 font-semibold text-lg mb-2">
+                              {cat.name}
+                            </h4>
+                            {/* Category Items */}
+                            <div className="flex flex-col space-y-2 border-l border-white/20 pl-4 ml-1">
+                              {cat.items.map((catItem, iIdx) => (
+                                <Link
+                                  key={iIdx}
+                                  href={catItem.href}
+                                  className="text-gray-300 hover:text-white py-1"
+                                >
+                                  {catItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
